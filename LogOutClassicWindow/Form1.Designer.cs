@@ -67,8 +67,10 @@
             // 
             // LogoffForm
             // 
+            this.AcceptButton = this.yesButton;
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.noButton;
             this.Controls.Add(this.noButton);
             this.Controls.Add(this.yesButton);
             this.Controls.Add(this.descriptionLabel);
