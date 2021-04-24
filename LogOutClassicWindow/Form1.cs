@@ -1,21 +1,15 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Diagnostics;
-using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
 using System.Globalization;
 using System.Threading;
 
 namespace LogOutClassicWindow
 {
-    public partial class Form1 : Form
+    public partial class LogoffForm : Form
     {
-        public Form1()
-        {
 
+        public LogoffForm()
+        {
             Thread.CurrentThread.CurrentCulture = CultureInfo.CurrentCulture;
             Thread.CurrentThread.CurrentUICulture = CultureInfo.CurrentUICulture;
             InitializeComponent();
@@ -47,12 +41,12 @@ namespace LogOutClassicWindow
             base.WndProc(ref message);
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void NoButton_Click(object sender, EventArgs e)
         {
             Close();
         }
 
-        private void buttonYes_Click(object sender, EventArgs e)
+        private void YesButton_Click(object sender, EventArgs e)
         {
             NativeMethods.ExitWindowsEx(NativeMethods.ExitWindows.LogOff, NativeMethods.ShutdownReason.MinorOther);
             Close();
