@@ -1,6 +1,6 @@
 ﻿namespace LogOutClassicWindow
 {
-    partial class Form1
+    partial class LogoffForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,58 +28,62 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            this.label1 = new System.Windows.Forms.Label();
-            this.buttonYes = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LogoffForm));
+            this.descriptionLabel = new System.Windows.Forms.Label();
+            this.yesButton = new System.Windows.Forms.Button();
+            this.noButton = new System.Windows.Forms.Button();
+            this.iconPictureBox = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
-            // label1
+            // descriptionLabel
             // 
-            resources.ApplyResources(this.label1, "label1");
-            this.label1.Name = "label1";
+            resources.ApplyResources(this.descriptionLabel, "descriptionLabel");
+            this.descriptionLabel.Name = "descriptionLabel";
             // 
-            // buttonYes
+            // yesButton
             // 
-            resources.ApplyResources(this.buttonYes, "buttonYes");
-            this.buttonYes.Name = "buttonYes";
-            this.buttonYes.UseVisualStyleBackColor = true;
-            this.buttonYes.Click += new System.EventHandler(this.buttonYes_Click);
+            this.yesButton.DialogResult = System.Windows.Forms.DialogResult.Yes;
+            resources.ApplyResources(this.yesButton, "yesButton");
+            this.yesButton.Name = "yesButton";
+            this.yesButton.UseVisualStyleBackColor = true;
+            this.yesButton.Click += new System.EventHandler(this.YesButton_Click);
             // 
-            // button1
+            // noButton
             // 
-            resources.ApplyResources(this.button1, "button1");
-            this.button1.Name = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.noButton.DialogResult = System.Windows.Forms.DialogResult.No;
+            resources.ApplyResources(this.noButton, "noButton");
+            this.noButton.Name = "noButton";
+            this.noButton.UseVisualStyleBackColor = true;
+            this.noButton.Click += new System.EventHandler(this.NoButton_Click);
             // 
-            // pictureBox1
+            // iconPictureBox
             // 
-            resources.ApplyResources(this.pictureBox1, "pictureBox1");
-            this.pictureBox1.Image = global::LogOutClassicWindow.Properties.Resources.key1;
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            this.iconPictureBox.Image = global::LogOutClassicWindow.Properties.Resources.key;
+            resources.ApplyResources(this.iconPictureBox, "iconPictureBox");
+            this.iconPictureBox.Name = "iconPictureBox";
+            this.iconPictureBox.TabStop = false;
+            this.iconPictureBox.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
-            // Form1
+            // LogoffForm
             // 
+            this.AcceptButton = this.yesButton;
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.buttonYes);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.pictureBox1);
+            this.CancelButton = this.noButton;
+            this.Controls.Add(this.noButton);
+            this.Controls.Add(this.yesButton);
+            this.Controls.Add(this.descriptionLabel);
+            this.Controls.Add(this.iconPictureBox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "Form1";
+            this.Name = "LogoffForm";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.TopMost = true;
             this.Load += new System.EventHandler(this.Form1_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -87,10 +91,10 @@
 
         #endregion
 
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button buttonYes;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.PictureBox iconPictureBox;
+        private System.Windows.Forms.Label descriptionLabel;
+        private System.Windows.Forms.Button yesButton;
+        private System.Windows.Forms.Button noButton;
     }
 }
 

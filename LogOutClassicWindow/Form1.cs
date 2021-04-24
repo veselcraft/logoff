@@ -1,36 +1,15 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Diagnostics;
-using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
 using System.Globalization;
 using System.Threading;
 
 namespace LogOutClassicWindow
 {
-    public partial class Form1 : Form
+    public partial class LogoffForm : Form
     {
-        public Form1()
-        {
-            /* Bitmap bmp = new Bitmap(Screen.PrimaryScreen.Bounds.Width, Screen.PrimaryScreen.Bounds.Height);
-            using (Graphics g = Graphics.FromImage(bmp))
-            {
-                g.CopyFromScreen(0, 0, 0, 0, Screen.PrimaryScreen.Bounds.Size);
-                Form desktop = new Form();
-                desktop.ShowInTaskbar = false;
-                desktop.FormBorderStyle = FormBorderStyle.None;
-                desktop.WindowState = FormWindowState.Maximized;
-                PictureBox desktopPic = new PictureBox();
-                desktopPic.Width = Screen.PrimaryScreen.Bounds.Size.Width;
-                desktopPic.Height = Screen.PrimaryScreen.Bounds.Size.Height;
-                // desktopPic.Image = g;
-                desktop.Controls.Add(desktopPic);
-                // desktop.Show();
-            } */
 
+        public LogoffForm()
+        {
             Thread.CurrentThread.CurrentCulture = CultureInfo.CurrentCulture;
             Thread.CurrentThread.CurrentUICulture = CultureInfo.CurrentUICulture;
             InitializeComponent();
@@ -43,10 +22,6 @@ namespace LogOutClassicWindow
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            
-            Brush aBrush = (Brush)Brushes.Black;
-            Graphics g = this.CreateGraphics();
-            g.FillRectangle(aBrush, 1, 1, 5, 5);
         }
 
         protected override void WndProc(ref Message message)
@@ -66,24 +41,15 @@ namespace LogOutClassicWindow
             base.WndProc(ref message);
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void NoButton_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            Close();
         }
 
-        private void buttonYes_Click(object sender, EventArgs e)
+        private void YesButton_Click(object sender, EventArgs e)
         {
-            var process = new System.Diagnostics.Process();
-            process.StartInfo.UseShellExecute = false;
-            process.StartInfo.CreateNoWindow = true;
-            process.StartInfo.WindowStyle = ProcessWindowStyle.Hidden;
-            process.StartInfo.FileName = "logoff";
-            process.StartInfo.RedirectStandardError = false;
-            process.StartInfo.RedirectStandardOutput = false;
-            process.StartInfo.UseShellExecute = false;
-            process.StartInfo.CreateNoWindow = true;
-            process.Start();
-            Application.Exit();
+            NativeMethods.ExitWindowsEx(NativeMethods.ExitWindows.LogOff, NativeMethods.ShutdownReason.MinorOther);
+            Close();
         }
     }
 }
