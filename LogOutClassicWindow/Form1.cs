@@ -15,21 +15,6 @@ namespace LogOutClassicWindow
     {
         public Form1()
         {
-            /* Bitmap bmp = new Bitmap(Screen.PrimaryScreen.Bounds.Width, Screen.PrimaryScreen.Bounds.Height);
-            using (Graphics g = Graphics.FromImage(bmp))
-            {
-                g.CopyFromScreen(0, 0, 0, 0, Screen.PrimaryScreen.Bounds.Size);
-                Form desktop = new Form();
-                desktop.ShowInTaskbar = false;
-                desktop.FormBorderStyle = FormBorderStyle.None;
-                desktop.WindowState = FormWindowState.Maximized;
-                PictureBox desktopPic = new PictureBox();
-                desktopPic.Width = Screen.PrimaryScreen.Bounds.Size.Width;
-                desktopPic.Height = Screen.PrimaryScreen.Bounds.Size.Height;
-                // desktopPic.Image = g;
-                desktop.Controls.Add(desktopPic);
-                // desktop.Show();
-            } */
 
             Thread.CurrentThread.CurrentCulture = CultureInfo.CurrentCulture;
             Thread.CurrentThread.CurrentUICulture = CultureInfo.CurrentUICulture;
@@ -43,10 +28,6 @@ namespace LogOutClassicWindow
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            
-            Brush aBrush = (Brush)Brushes.Black;
-            Graphics g = this.CreateGraphics();
-            g.FillRectangle(aBrush, 1, 1, 5, 5);
         }
 
         protected override void WndProc(ref Message message)
