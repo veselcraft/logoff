@@ -49,12 +49,13 @@ namespace LogOutClassicWindow
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            Close();
         }
 
         private void buttonYes_Click(object sender, EventArgs e)
         {
             NativeMethods.ExitWindowsEx(NativeMethods.ExitWindows.LogOff, NativeMethods.ShutdownReason.MinorOther);
+            Close();
         }
     }
 }
