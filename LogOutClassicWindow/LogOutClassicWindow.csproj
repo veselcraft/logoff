@@ -84,18 +84,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Image1.bmp" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Icon1.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Key.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Key.bmp" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\key.png" />
   </ItemGroup>
   <ItemGroup>
