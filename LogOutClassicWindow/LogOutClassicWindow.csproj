@@ -99,7 +99,6 @@
     <None Include="Resources\key.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\key1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
