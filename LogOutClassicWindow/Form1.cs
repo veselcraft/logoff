@@ -54,17 +54,7 @@ namespace LogOutClassicWindow
 
         private void buttonYes_Click(object sender, EventArgs e)
         {
-            var process = new System.Diagnostics.Process();
-            process.StartInfo.UseShellExecute = false;
-            process.StartInfo.CreateNoWindow = true;
-            process.StartInfo.WindowStyle = ProcessWindowStyle.Hidden;
-            process.StartInfo.FileName = "logoff";
-            process.StartInfo.RedirectStandardError = false;
-            process.StartInfo.RedirectStandardOutput = false;
-            process.StartInfo.UseShellExecute = false;
-            process.StartInfo.CreateNoWindow = true;
-            process.Start();
-            Application.Exit();
+            NativeMethods.ExitWindowsEx(NativeMethods.ExitWindows.LogOff, NativeMethods.ShutdownReason.MinorOther);
         }
     }
 }
